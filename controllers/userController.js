@@ -1,14 +1,24 @@
-const getAllUsers = (req,res)=>{
-    res.send("Fetching all users");
-}
+const { sendErrorResponse, sendResponse } = require('../utils/response');
 
+const getAllUsers = (req, res, next) => {
+    
+    res.send(`Fetching all users`)
+}
 const addUser = (req,res)=>{
     res.send("Adding a new user");
 }
 
 const getUserById = (req,res)=>{
-    const id = req.params.id;
-    res.send(`Fetching user with ID: ${id}`)
+    const user = req.params.id;
+    if (user<10) {
+        return sendErrorResponse(res, {
+          message: 'User not found',
+          statusCode: 404
+        });
+  
+      }
+      return sendResponse(res, user, 200);
+    
 }
 
 module.exports = {
