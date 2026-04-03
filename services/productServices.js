@@ -1,6 +1,4 @@
-const getAllProducts = ()=>{
-    return "Fetching all products";
-}
+
 
 const addProduct = ()=>{
     return "Adding a new product";
@@ -11,5 +9,5 @@ const getProductById = (id)=>{
 }
 
 module.exports = {
-    getAllProducts,addProduct,getProductById
+    addProduct,getProductById
 }
