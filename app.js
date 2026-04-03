@@ -8,6 +8,7 @@ const userRouter = require("./routes/userRoutes");
 const productRouter = require("./routes/productRoutes");
 const cartRouter = require("./routes/cartRoutes");
 
+app.use(express.static("public"));
 app.use("/",userRouter);
 app.use("/",productRouter);
 app.use("/",cartRouter)

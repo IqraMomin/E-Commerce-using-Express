@@ -6,8 +6,8 @@ const getProduct = (req,res)=>{
 }
 
 const addProduct = (req,res)=>{
-    const message = productServices.addProduct;
-    res.send(message);
+    const product = req.body.productName
+    res.send(product);
 }
 
 const getProductById = (req,res)=>{
